@@ -8,12 +8,12 @@ function createWindow () {
     width: 800,
     height: 600,
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
+      preload: 'https://jztest.jinghangapps.com/supervisor/fe/'
     }
   })
 
   // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  mainWindow.loadURL('https://jztest.jinghangapps.com/supervisor/fe/')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

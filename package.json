@@ -1,10 +1,32 @@
 {
-  "name": "electron-quick-start",
+  "name": "jingxiaoai",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist-win64": "electron-builder --win --x64",
+    "dist-mac": "electron-builder --mac"
+  },
+  "build": {
+    "productName": "鲸小爱",
+    "appId": "com.jingxiaoai.app",
+    "mac": {
+      "icon": "./icon-512x512.png",
+      "artifactName": "${productName}.${ext}",
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "icon": "./icon-512x512.png",
+      "artifactName": "${productName}.${ext}",
+      "target": [
+        "nsis",
+        "zip"
+      ]
+    }
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -17,6 +39,10 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "electron-builder": "^22.9.1",
     "electron": "^11.1.1"
+  },
+  "dependencies": {
+   
   }
 }
